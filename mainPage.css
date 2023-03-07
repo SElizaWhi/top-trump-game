@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
 body{
-    background-color: powderblue;
+    background-color: rgba(173,255,200,1.00);
     margin: 0;
     padding: 0;
     text-align: center;
@@ -13,21 +13,42 @@ h1 {
 
 }
 
-h2, p{
+h2 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-left: 150px;
-    margin-right: 150px;
+}
+
+p {
+    font-style: italic;
 }
 
 .category-button {
-    background-color: aquamarine;
+    background-color: rgba(248,255,173,1.00);
 }
 
 #player-section {
-    display : block;
-    color: red;
+    background-color: rgba(255,173,187,1.00);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  width: 200px;
 }
+
 #computer-section {
-    display: block;
-    color: blue;
+    background-color: rgba(173,228,255,1.00);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+  }
+
+ul {
+    list-style-type: none;
+}
+
+#start-button{
+    background-color: rgba(241,173,255,1.00);
 }

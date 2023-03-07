@@ -7,6 +7,7 @@ class Card{
       this.imdbScore = imdbScore
       this.funFact = funFact
   } 
+  
   }
 
 const deck =[
@@ -38,7 +39,7 @@ const startButton = document.getElementById("start-button");
 const categoryButtons = document.querySelectorAll(".category-button");
 let playerCards = [];
 let computerCards = [];
-let score = 0;
+let index =0;
 
 
 function shuffle(deck) {
@@ -64,6 +65,7 @@ function displayCards(playerCard, computerCard) {
       <li>IMDB score: ${playerCard.imdbScore}</li>
     </ul>
     <p>Fun fact: ${playerCard.funFact}</p>
+    <p>Cards in your hand: ${playerCards.length}</p>
     </div>
   `;
 
@@ -73,9 +75,10 @@ function displayCards(playerCard, computerCard) {
     <ul>
       <li>Roles: ${computerCard.roles}</li>
       <li>Awards: ${computerCard.awards}</li>
-      <li>IMDB score: ${playerCard.imdbScore}</li>
+      <li>IMDB score: ${computerCard.imdbScore}</li>
       </ul>
-      <p>Fun fact: ${playerCard.funFact}</p>
+      <p>Fun fact: ${computerCard.funFact}</p>
+      <p>Cards in your hand: ${computerCards.length}</p>
     </div>
   `;
 }
@@ -87,40 +90,51 @@ startButton.addEventListener("click", () => {
       ? playerCards.push(shuffledDeck[i])
       : computerCards.push(shuffledDeck[i]);
   }
-  displayCards(playerCards[0]);
+  displayCards(playerCards[0], computerCards[0]);
 });
 
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const selectedCategory = button.textContent.trim();
+    const selectedCategory = button.value;
 
-    const playerValue = playerCards[0][selectedCategory];
-    const computerValue = computerCards[0][selectedCategory];
+    const playerValue = playerCards[index][selectedCategory];
+    const computerValue = computerCards[index][selectedCategory];
+
+    console.log(selectedCategory, playerValue, computerValue)
 
     if (playerValue > computerValue) {
-      playerCards.push(computerCards[0]);
-      computerCards.pop();
-      displayCards(playerCards[0], computerCards[0] /*, activePlayer*/);
-      document.getElementById('playerCards').innerHTML = "Score: " + score;
+      displayCards(playerCards[0], computerCards[0]);
+      playerCards.push(computerCards.shift());
+      alert("You won this round")
+      
     } else if (computerValue > playerValue) {
-      computerCards.push(playerCards[0]);
-      playerCards.pop();
-      displayCards(playerCards[0], computerCards[0] /*, activePlayer*/);
+      displayCards(playerCards[0], computerCards[0]);
+      computerCards.push(playerCards.shift());
+      alert("The computer won this round")
+     
     } else {
+      displayCards(playerCards[0], computerCards[0]);
       playerCards.shift();
       computerCards.shift();
+      alert("It's a tie!")
+    }
+    index++;
+
+    if ((index < playerCards.length) && (index < computerCards.length)){
+      displayCards(playerCards[index], computerCards[index]);
+  
     }
 
     if (playerCards.length === 0) {
-      console.log("Game over. You lose!");
+      alert("Game over. You lose!");
     } else if (computerCards.length === 0) {
-      console.log("Game over. You win!");
+      alert("Game over. You win!");
     } else {
 
-      console.log("Player cards" + playerCards.length);
+      console.log("You have " + playerCards.length + " cards.");
 
-      /*displayCards(playerCards[currentPlayCard], computerCards[currentComCard])*/
     }
+  
   });
 });
