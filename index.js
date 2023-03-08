@@ -13,7 +13,7 @@ class Card{
 const deck =[
 new Card("George Clooney", 81, 95, 94, "Was voted `Sexiest Man Alive` by People magazine in 1997."),
 new Card("Natalie Portman", 71, 94, 8, "Is trained in ballet, jazz, and tap dancing."),
-new Card ("Viola Davis", 94, 115, 344, "Named one of Time magazine's 100 Most Influential People in the World in 2012."),
+new Card ("Viola Davis", 94, 115, 244, "Named one of Time magazine's 100 Most Influential People in the World in 2012."),
 new Card ("Kate Winslet", 70, 104, 104, "Her performance in Eternal Sunshine of the Spotless Mind (2004) is her personal favorite."),
 new Card("Anthony Hopkins", 147, 71, 127, "His early ambition was to be a concert pianist."),
 new Card("Meryl Streep", 94, 178, 113, "As of 2018, she is the most nominated actress with 21 Academy Award nominations."),
