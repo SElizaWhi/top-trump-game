@@ -76,7 +76,7 @@ class Card{
         <li>Albums: ${computerCard.awards}</li>
         <li>Awards: ${computerCard.nominations}</li>
         </ul>
-        <p>Fun fact: ${computerCard.funFact}</p>
+        <p id="funFact">Fun fact: ${computerCard.funFact}</p>
         <p>Cards in your hand: ${computerCards.length}</p>
       </div>
     `;
