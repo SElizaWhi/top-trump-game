@@ -63,7 +63,7 @@ function displayCards(playerCard, computerCard) {
       <li>Awards: ${playerCard.awards}</li>
       <li>Nominations: ${playerCard.nominations}</li>
     </ul>
-    <p>Fun fact: ${playerCard.funFact}</p>
+    <p id="funFact">Fun fact: ${playerCard.funFact}</p>
     <p>Cards in your hand: ${playerCards.length}</p>
     </div>
   `;
@@ -76,7 +76,7 @@ function displayCards(playerCard, computerCard) {
       <li>Awards: ${computerCard.awards}</li>
       <li>Nominations: ${computerCard.nominations}</li>
       </ul>
-      <p>Fun fact: ${computerCard.funFact}</p>
+      <p id="funFact">Fun fact: ${computerCard.funFact}</p>
       <p>Cards in your hand: ${computerCards.length}</p>
     </div>
   `;

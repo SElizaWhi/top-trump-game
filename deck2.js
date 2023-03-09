@@ -63,7 +63,7 @@ class Card{
         <li>Albums: ${playerCard.awards}</li>
         <li>Awards: ${playerCard.nominations}</li>
       </ul>
-      <p>Fun fact: ${playerCard.funFact}</p>
+      <p id="funFact" >Fun fact: ${playerCard.funFact}</p>
       <p>Cards in your hand: ${playerCards.length}</p>
       </div>
     `;
