@@ -5,7 +5,7 @@ body{
     margin: 0;
     padding: 0;
     text-align: center;
-    font-family: fantasy;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
@@ -55,6 +55,12 @@ p {
 
 #start-button{
     background-color: rgba(241,173,255,1.00);
+}
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
 }
 
 ol{
