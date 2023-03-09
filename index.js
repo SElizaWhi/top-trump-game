@@ -84,7 +84,7 @@ function displayCards(playerCard, computerCard) {
 
 function endGame(playerCards, computerCards) {
   if (playerCards.length > 0 && computerCards.length > 0) {
-    // display the first card from each player's hand
+   
     displayCards(playerCards[0], computerCards[0]);
   } else {
     let winner = "";
@@ -93,7 +93,7 @@ function endGame(playerCards, computerCards) {
     } else if (computerCards.length === 0) {
       winner = "Player";
     }
-    // display the game over message with the winner
+    
     playerHand.innerHTML = `
       <div class="game-over">
         <h2>Game Over</h2>
@@ -102,9 +102,9 @@ function endGame(playerCards, computerCards) {
       </div>
     `;
     computerHand.innerHTML = "";
-    // add a click event listener to the restart button
+   
     document.querySelector("#restart-button").addEventListener("click", () => {
-      // reload the page
+     
       location.reload();
     });
   }
@@ -153,7 +153,7 @@ categoryButtons.forEach((button) => {
     computerHand.style.display = 'inline-block';
     setTimeout(() => {
       comparingHands(playerValue, computerValue);
-    }, 4000);
+    }, 5000);
   });
 });
 

@@ -23,6 +23,7 @@ p {
 
 .category-button {
     background-color: rgba(248,255,173,1.00);
+   
 }
 
 #player-section {
@@ -48,6 +49,7 @@ p {
     margin: 20px;
     width: 200px;
     height: 350px;
+    
 
   }
 
@@ -65,5 +67,15 @@ ol{
 
 #play-button {
     display: inline-block;
-    
+    background-color: paleturquoise;
+}
+
+button {
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
 }
