@@ -2,36 +2,31 @@
 <html>
 
 <head>
+    <title>Top Trumps</title>
     <meta charset="utf-8">
-    <title>Card Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Top Trumps</h1>
-    <div id="game-board">
-        <div id="player-section">
-            <h2>Player</h2>
-            <div id="player-hand"></div>
-        <div id="player-points"></div>
-        </div>
-        <div id="computer-section">
-            <h2>Computer</h2>
-            <div id="computer-hand"></div>
-            <div id="computer-points"></div>
-        </div>
-
-
-        <div id="category-section">
-            <h2>Select a category:</h2>
-            
-                <button class="category-button" value ="roles">Number of roles</button>
-                <button class="category-button" value ="awards">Awards</button>
-                <button class="category-button" value ="nominations">Nominations</button>
-        </div>
-        <button id="start-button">Start Game</button>
-    </div>
-    <script src="index.js"></script>
+    <header>
+        <h1>Top Trumps</h1>
+    </header>
+    <main>
+        <section>
+            <h2>How to play</h2>
+            <ol>
+                <li>Select the category you think will beat the opponent</li>
+                <li>Click the corresponding category button to see your result</li>
+                <li>The winner of the round recieves the losers card and the next card is shown</li>
+                <li>The first person to hold all 30 cards wins the game</li>
+            </ol>
+            <div><button id="play-button"> <a href="/play.html"> Play Now</a> </button>
+                </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
 </body>
 
 </html>
