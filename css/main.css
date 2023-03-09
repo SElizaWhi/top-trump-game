@@ -30,10 +30,12 @@ p {
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   display: inline-block;
+  overflow: hidden;
   padding: 20px;
   margin: 20px;
   width: 200px;
   height: 350px;
+
 }
 
 #computer-section {
@@ -41,10 +43,12 @@ p {
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     display: inline-block;
+    overflow: hidden;
     padding: 20px;
     margin: 20px;
     width: 200px;
     height: 350px;
+
   }
 
 ul {
