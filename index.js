@@ -39,9 +39,8 @@ const startButton = document.getElementById("start-button");
 const categoryButtons = document.querySelectorAll(".category-button");
 let playerCards = [];
 let computerCards = [];
-let index =0;
-
-
+let index = 0;
+let computerChoice = 0;
 function shuffle(deck) {
   for (let i = deck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -55,8 +54,8 @@ function shuffle(deck) {
 function displayCards(playerCard, computerCard) {
   playerHand.innerHTML = ``;
   computerHand.innerHTML = ``;
-  
-    playerHand.innerHTML += `
+
+  playerHand.innerHTML += `
       <div class="card">
     <h2>${playerCard.cardName}</h2>
     <ul>
@@ -69,13 +68,13 @@ function displayCards(playerCard, computerCard) {
     </div>
   `;
 
-    computerHand.innerHTML += `
+  computerHand.innerHTML += `
   <div class="card">
     <h2>${computerCard.cardName}</h2>
     <ul>
       <li>Roles: ${computerCard.roles}</li>
       <li>Awards: ${computerCard.awards}</li>
-      <li>IMDB score: ${computerCard.nominations}</li>
+      <li>Nominations: ${computerCard.nominations}</li>
       </ul>
       <p>Fun fact: ${computerCard.funFact}</p>
       <p>Cards in your hand: ${computerCards.length}</p>
@@ -111,30 +110,31 @@ function endGame(playerCards, computerCards) {
   }
 }
 
-function comparingHands(playerValue, computerValue){
-    if (playerValue > computerValue) {
-      playerCards.push(computerCards.shift());
-      playerCards.push(playerCards.shift());
-      console.log("You won this round")
-      endGame(playerCards, computerCards);
-      
-    } else if (computerValue > playerValue) {
-      computerCards.push(playerCards.shift());
-      computerCards.push(computerCards.shift());
-      console.log("The computer won this round")
-      endGame(playerCards, computerCards);     
-    } else {
-      console.log("It's a tie!")
-      playerCards.push(playerCards.shift());
-      computerCards.push(computerCards.shift());
-      endGame(playerCards, computerCards);
-
-    }
+function comparingHands(playerValue, computerValue) {
+  if (playerValue > computerValue) {
+    computerHand.style.display = 'none';
+    playerCards.push(computerCards.shift());
+    playerCards.push(playerCards.shift());
+    console.log("You won this round");
+    computerHand.style.display = 'none';
+    endGame(playerCards, computerCards);
+  } else if (computerValue > playerValue) {
+    computerHand.style.display = 'none';
+    computerCards.push(playerCards.shift());
+    computerCards.push(computerCards.shift());
+    console.log("The computer won this round");
+    endGame(playerCards, computerCards);
+  } else {
+    computerHand.style.display = 'none';
+    console.log("It's a tie!");
+    playerCards.push(playerCards.shift());
+    computerCards.push(computerCards.shift());
+    endGame(playerCards, computerCards);
   }
+}
 
-
-
-    startButton.addEventListener("click", () => {
+startButton.addEventListener("click", () => {
+  computerHand.style.display = 'none';
   const shuffledDeck = shuffle(deck);
   for (let i = 0; i < shuffledDeck.length; i++) {
     i % 2 === 0
@@ -142,16 +142,18 @@ function comparingHands(playerValue, computerValue){
       : computerCards.push(shuffledDeck[i]);
   }
   displayCards(playerCards[0], computerCards[0]);
-  document.querySelector('#start-button').disabled = true;
+  document.querySelector("#start-button").disabled = true;
 });
-
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const selectedCategory = button.value;
- console.log(playerCards[index], computerCards[index])
     const playerValue = playerCards[index][selectedCategory];
     const computerValue = computerCards[index][selectedCategory];
-comparingHands(playerValue, computerValue);
+    computerHand.style.display = 'inline-block';
+    setTimeout(() => {
+      comparingHands(playerValue, computerValue);
+    }, 4000);
   });
 });
+
