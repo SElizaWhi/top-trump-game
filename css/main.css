@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
 
 body{
-    background-image: url("images/blue.jpg");
+    background-image: url("../images/blue.jpg");
     margin: 0;
     padding: 0;
     text-align: center;
@@ -26,7 +26,7 @@ p {
 }
 
 #player-section {
-  background-image: url("images/pink.jpg");
+  background-image: url("../images/pink.jpg");
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   display: inline-block;
@@ -37,7 +37,7 @@ p {
 }
 
 #computer-section {
-    background-image: url("images/purple.jpg");
+    background-image: url("../images/purple.jpg");
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     display: inline-block;
