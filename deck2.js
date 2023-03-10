@@ -41,6 +41,8 @@ class Card{
   let computerCards = [];
   let index = 0;
   let computerChoice = 0;
+
+
   function shuffle(deck) {
     for (let i = deck.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -63,7 +65,7 @@ class Card{
         <li>Albums: ${playerCard.awards}</li>
         <li>Awards: ${playerCard.nominations}</li>
       </ul>
-      <p id="funFact" >Fun fact: ${playerCard.funFact}</p>
+      <p id="funFact">Fun fact: ${playerCard.funFact}</p>
       <p>Cards in your hand: ${playerCards.length}</p>
       </div>
     `;
@@ -115,18 +117,15 @@ class Card{
       computerHand.style.display = 'none';
       playerCards.push(computerCards.shift());
       playerCards.push(playerCards.shift());
-      console.log("You won this round");
       computerHand.style.display = 'none';
       endGame(playerCards, computerCards);
     } else if (computerValue > playerValue) {
       computerHand.style.display = 'none';
       computerCards.push(playerCards.shift());
       computerCards.push(computerCards.shift());
-      console.log("The computer won this round");
       endGame(playerCards, computerCards);
     } else {
       computerHand.style.display = 'none';
-      console.log("It's a tie!");
       playerCards.push(playerCards.shift());
       computerCards.push(computerCards.shift());
       endGame(playerCards, computerCards);
@@ -153,7 +152,7 @@ class Card{
       computerHand.style.display = 'inline-block';
       setTimeout(() => {
         comparingHands(playerValue, computerValue);
-      }, 5000);
+      }, 4000);
     });
   });
   

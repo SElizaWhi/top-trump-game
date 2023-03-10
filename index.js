@@ -153,7 +153,7 @@ categoryButtons.forEach((button) => {
     computerHand.style.display = 'inline-block';
     setTimeout(() => {
       comparingHands(playerValue, computerValue);
-    }, 5000);
+    }, 4000);
   });
 });
 
